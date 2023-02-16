@@ -428,6 +428,7 @@ GameObject:
   - component: {fileID: 1107775829}
   - component: {fileID: 1107775828}
   - component: {fileID: 1107775827}
+  - component: {fileID: 1107775832}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -468,7 +469,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107775825}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
@@ -998,6 +999,21 @@ MonoBehaviour:
     m_Reference: {fileID: 875253871413052681, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!114 &1107775832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107775825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f382a2b8adc8f34b8c544c8684618b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ourHandPrefab: {fileID: 3769084787132767917, guid: 721c680000a50ef40abeca6b9a4e5277,
+    type: 3}
+  ourControllerCharacteristics: 576
 --- !u!1 &1260684009 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5854177844757272825, guid: c33eb768c7627f7448150ebc0aea5768,
@@ -1032,6 +1048,7 @@ GameObject:
   - component: {fileID: 1401248057}
   - component: {fileID: 1401248056}
   - component: {fileID: 1401248055}
+  - component: {fileID: 1401248060}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -1072,7 +1089,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401248053}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
@@ -1602,6 +1619,21 @@ MonoBehaviour:
     m_Reference: {fileID: 7779212132400271959, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!114 &1401248060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401248053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f382a2b8adc8f34b8c544c8684618b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ourHandPrefab: {fileID: 683541017144466865, guid: c35a2c21b329878448a17c15900dcc13,
+    type: 3}
+  ourControllerCharacteristics: 320
 --- !u!1 &1507105071
 GameObject:
   m_ObjectHideFlags: 0
