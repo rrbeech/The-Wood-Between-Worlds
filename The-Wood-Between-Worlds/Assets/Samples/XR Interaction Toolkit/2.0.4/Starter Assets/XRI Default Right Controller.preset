@@ -530,7 +530,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_DirectionalAnchorRotationAction.m_Action.m_Id
-    value: bbffe8bb-fab0-478e-a9ba-c1d295cc18f0
+    value: d4e9ff1e-9261-4302-84ce-20c8f15d8d8b
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_DirectionalAnchorRotationAction.m_Action.m_Processors

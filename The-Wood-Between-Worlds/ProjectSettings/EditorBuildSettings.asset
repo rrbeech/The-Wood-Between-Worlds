@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/WardrobeVR.unity
+    guid: 6de978f9d9372ae429c7a6e068f996da
   - enabled: 1
     path: Assets/Scenes/Wood Between Worlds.unity
     guid: ac2363ef0f8ca604aaac73d7e28bbd32
