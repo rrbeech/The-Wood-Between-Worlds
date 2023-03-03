@@ -14,7 +14,7 @@ public class Lift : MonoBehaviour
 
     // time after this script initializes, in seconds,
     // that the scene transition will happen
-    private const float TIME_LIMIT = 2F; //seconds
+    private const float TIME_LIMIT = 1F; //seconds
 
     private void Awake()
     {
