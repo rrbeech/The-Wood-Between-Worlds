@@ -6,11 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/WardrobeVR.unity
+    path: 
     guid: 6de978f9d9372ae429c7a6e068f996da
   - enabled: 1
     path: Assets/Scenes/Wood Between Worlds.unity
     guid: ac2363ef0f8ca604aaac73d7e28bbd32
+  - enabled: 1
+    path: Assets/Scenes/Transition Scene.unity
+    guid: 5760eff7e0e4d7d4b846e56d08af8abb
+  - enabled: 1
+    path: Assets/Scenes/Charn.unity
+    guid: 922b47d6cb00f4942b1c0ce75c7d6565
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
