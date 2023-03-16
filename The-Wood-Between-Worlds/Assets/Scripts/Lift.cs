@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class Lift : MonoBehaviour
 {
     private Animator drop = null;
+    private Animator Stargate1 = null;
+    private Animator Stargate2 = null;
     private bool alreadyTriggered = false;  // this is so that triggering happes only once.                                        
     private const string sceneName = "Transition Scene";  //Scene name we are going to.
     private IEnumerator coroutine;
@@ -18,7 +20,10 @@ public class Lift : MonoBehaviour
 
     private void Awake()
     {
-        drop = GetComponent<Animator>();
+        Stargate1 = GameObject.Find("Star Gate Number One (1)").GetComponent<Animator>();
+        Stargate2 = GameObject.Find("Star Gate Number two (1)").GetComponent<Animator>();
+
+        drop = GetComponent<Animator>(); //Drop below the surface of the pond
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,11 +32,14 @@ public class Lift : MonoBehaviour
         if (other.CompareTag("Player") && alreadyTriggered == false) //if this is the first time the lift has been triggered...
         {
             //Debug.Log("Playing animation NOW");
-            drop.Play("goDown", 0, 0.0f);
+
+            drop.Play("goDown", 0, 0.0f); 
+            Stargate1.Play("Stargate", 0, 0.0f);
+            Stargate2.Play("Stargate", 0, 0.0f);
             alreadyTriggered = true; //set flag so we don't drop a second time.
 
-            coroutine = SceneLoader();
-            StartCoroutine(coroutine);
+            //coroutine = SceneLoader(); //turned off for now.
+            //StartCoroutine(coroutine);
         }
     }
 
