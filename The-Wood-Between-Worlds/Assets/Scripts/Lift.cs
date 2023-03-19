@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Lift : MonoBehaviour
 {
+    public AudioClip newTrack; //this will be the transition sound
     private Animator drop = null;
     private Animator Stargate1 = null;
     private Animator Stargate2 = null;
@@ -16,7 +17,7 @@ public class Lift : MonoBehaviour
 
     // time after this script initializes, in seconds,
     // that the scene transition will happen
-    private const float TIME_LIMIT = 1F; //seconds
+    private const float TIME_LIMIT = 10F; //seconds
 
     private void Awake()
     {
@@ -35,11 +36,12 @@ public class Lift : MonoBehaviour
 
             drop.Play("goDown", 0, 0.0f); 
             Stargate1.Play("Stargate", 0, 0.0f);
-            //Stargate2.Play("Stargate", 0, 0.0f);
+            AudioManager.instance.SwapTrack(newTrack); //Play the transition Sound effect
+           
             alreadyTriggered = true; //set flag so we don't drop a second time.
 
-            //coroutine = SceneLoader(); //turned off for now.
-            //StartCoroutine(coroutine);
+            coroutine = SceneLoader(); //Wait TIME_LIMIT seconds then switch scenes
+            StartCoroutine(coroutine);
         }
     }
 

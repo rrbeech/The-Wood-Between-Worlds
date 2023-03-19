@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioClip defaultAmbience; //might not need this
+    public AudioClip defaultAmbience; //background music
+    public AudioClip transitionSound;
     private AudioSource track1, track2, GodsPart, MosesPart;
-    public GameObject God; //game object that has the audio clip component we want to play
+    //public GameObject God; //game object that has the audio clip component we want to play
     private bool isPlayingTrack1;
 
     public static AudioManager instance;
@@ -26,14 +27,10 @@ public class AudioManager : MonoBehaviour
         track1.loop = true;
         track2.loop = true;
         isPlayingTrack1 = true;
-        
-        GodsPart = God.GetComponent<AudioSource>();
-   
-        Debug.Log("GodsPart.clip = " + GodsPart.clip);
-        
+             
         track1.clip = defaultAmbience; /// play the ambient track (if any) at the Start 
         track1.Play();
-     
+        track2.clip = transitionSound;  //transporter sound effect     
     }
 
     public void SwapTrack(AudioClip newClip)
@@ -43,18 +40,18 @@ public class AudioManager : MonoBehaviour
 
         isPlayingTrack1 = !isPlayingTrack1;
     }
-
+    
     public void ReturnToDefault()
     {
         SwapTrack(defaultAmbience);
     }
-
+    
     private IEnumerator FadeTrack(AudioClip newClip)
     {
         float timeToFade = 01.25f;
         float timeElapsed = 0, pct;
 
-        if (isPlayingTrack1) //Entering the Grotto
+        if (isPlayingTrack1) //If default Ambience it playing...
         {
             track2.clip = newClip;
             track2.Play();
@@ -66,15 +63,11 @@ public class AudioManager : MonoBehaviour
                 timeElapsed += Time.deltaTime;
                 yield return null;
             }
-
                 track1.Stop();
-
-            //Play interior (Burning Bush) dialog tracks
-            GodsPart.Play();
-            MosesPart.Play();
-
         }
-        else   //Exiting the Grotto
+
+        /*
+        else   //Returning to the woods (don't need this for now)
         {
             track1.clip = newClip;
             track1.Play();
@@ -90,10 +83,11 @@ public class AudioManager : MonoBehaviour
             track2.Stop();
 
             //Stop interior (burning Bush) dialog tracks
-            GodsPart.Stop();
-            MosesPart.Stop();
+            //GodsPart.Stop();
+            //MosesPart.Stop();
 
         }
+        */
         
     }
 
