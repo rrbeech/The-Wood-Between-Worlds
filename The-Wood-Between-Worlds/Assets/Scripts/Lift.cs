@@ -20,8 +20,8 @@ public class Lift : MonoBehaviour
 
     private void Awake()
     {
-        Stargate1 = GameObject.Find("Star Gate Number One (1)").GetComponent<Animator>();
-        Stargate2 = GameObject.Find("Star Gate Number two (1)").GetComponent<Animator>();
+        Stargate1 = GameObject.Find("Stargate").GetComponent<Animator>();
+        //Stargate2 = GameObject.Find("Star Gate Number two (1)").GetComponent<Animator>();
 
         drop = GetComponent<Animator>(); //Drop below the surface of the pond
     }
@@ -35,7 +35,7 @@ public class Lift : MonoBehaviour
 
             drop.Play("goDown", 0, 0.0f); 
             Stargate1.Play("Stargate", 0, 0.0f);
-            Stargate2.Play("Stargate", 0, 0.0f);
+            //Stargate2.Play("Stargate", 0, 0.0f);
             alreadyTriggered = true; //set flag so we don't drop a second time.
 
             //coroutine = SceneLoader(); //turned off for now.
