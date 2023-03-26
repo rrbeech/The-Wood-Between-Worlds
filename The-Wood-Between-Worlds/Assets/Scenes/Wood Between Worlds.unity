@@ -446,7 +446,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cb5d9c73c4b2b4046bf1e078745d93fb, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1855,7 +1855,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newTrack: {fileID: 8300000, guid: 08056dece87d3454385940d42bb28362, type: 3}
-  greenRing: {fileID: 0}
+  onThePlatform: 0
+  destinationScene: Charn
+  ringTouched: 0
 --- !u!95 &377023815
 Animator:
   serializedVersion: 5

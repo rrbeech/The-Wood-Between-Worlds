@@ -11,15 +11,16 @@ public class Lift : MonoBehaviour
     private Animator drop = null;  //animator for the lift
     private Animator woodExit = null; //Animator for the stargate
 
-    private bool onThePlatform = false;  // Are we standing on the platform?                                      
-    private const string destinationScene = "Charn";  //Destination Scene.
+    public bool onThePlatform = false;  // Are we standing on the platform?                                      
+    public string destinationScene = "Charn";  //Destination Scene.
     private IEnumerator coroutine;
 
     // time after this script initializes, in seconds,
     // that the scene transition will happen
     private const float TIME_LIMIT = 10F; //seconds
-    public GameObject greenRing;
-    private bool ringTouched;
+    private GameObject greenRing;  //Only the green rings will draw player out of the Wood Between Worlds.
+
+    public bool ringTouched;
 
     private void Awake()
     {
@@ -30,21 +31,19 @@ public class Lift : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) //If player moves onto the platform while touching green ring
     {
-        //Debug.Log("OnTriggerEnter occured");
-        ringTouched = greenRing.GetComponent<RingCollisionDetect>().ringTouched;
+          ringTouched = greenRing.GetComponent<RingCollisionDetect>().ringTouched;
 
-        if (other.CompareTag("Player") &&  //If colliding with Player (hands)
-            (onThePlatform == false) && //if this is the first time the lift has been triggered
-            ringTouched) //We are touching the green ring
+        if (other.CompareTag("Player")) //If colliding with Player (hands)         
         {
-            onThePlatform = true; //set flag so we don't drop a second time.
-            ExitTheWoods();            
+            onThePlatform = true; //set flag 
+            if (ringTouched) //exit the woods if touching the green ring
+                ExitTheWoods();            
         }
     }
 
     private void OnTriggerExit(Collider other)
     {      
-            onThePlatform = false; //set flag so we don't drop a second time    
+            onThePlatform = false; //No longer on the platform   
     }
 
     private IEnumerator SceneLoader()
@@ -55,18 +54,20 @@ public class Lift : MonoBehaviour
 
     void ExitTheWoods() //Do the stuff to exit this scene
     {
-        drop.Play("goDown", 0, 0.0f);
-        woodExit.Play("WoodExit", 0, 0.0f);
+        drop.Play("goDown", 0, 0.0f); //lower the platform
+        woodExit.Play("WoodExit", 0, 0.0f); // turn on the stargate effect
         AudioManager.instance.SwapTrack(newTrack); //Play the transition Sound effect
 
         coroutine = SceneLoader(); //Wait TIME_LIMIT seconds then switch scenes
         StartCoroutine(coroutine);
     }
-    /*
+    
     private void Update() // if already on the platform THEN player touches green ring...
     {
-        if(ringTouched && onThePlatform)
+        ringTouched = greenRing.GetComponent<RingCollisionDetect>().ringTouched;
+
+        if (ringTouched && onThePlatform)
             ExitTheWoods();
     }
-    */
+   
 }
