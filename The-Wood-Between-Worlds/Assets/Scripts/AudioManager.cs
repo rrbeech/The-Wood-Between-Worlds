@@ -6,8 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public AudioClip defaultAmbience; //background music
     public AudioClip transitionSound;
-    private AudioSource track1, track2, GodsPart, MosesPart;
-    //public GameObject God; //game object that has the audio clip component we want to play
+    private AudioSource track1, track2;
     private bool isPlayingTrack1;
 
     public static AudioManager instance;

@@ -6,9 +6,11 @@ public class AudioManagerCharn : MonoBehaviour
 {
     public AudioClip defaultAmbience; //background music
     public AudioClip transitionSound;
+    public AudioClip transitionExitSound;
     public float transitionVolume;
     public float ambientDelay;
     private AudioSource track1, track2;
+    private bool isPlayingTrack1 = true;
 
 
     public static AudioManagerCharn instance;
@@ -21,7 +23,7 @@ public class AudioManagerCharn : MonoBehaviour
         }
     }
 
-    private void Start() // Assign initial tracks
+    private void Start() // Assign initial tracks and play them
     {
         track1 = gameObject.AddComponent<AudioSource>();
         track2 = gameObject.AddComponent<AudioSource>();
@@ -35,5 +37,40 @@ public class AudioManagerCharn : MonoBehaviour
         track2.clip = defaultAmbience;  //background music   
         track2.PlayDelayed(ambientDelay);
     }
+
+    private void PlayExitSound() //stop playing ambient music and play trasit
+    {
+        SwapTrack(transitionSound);
+    } 
+
+    public void SwapTrack(AudioClip newClip)
+    {
+        StopAllCoroutines();
+        StartCoroutine(FadeTrack(newClip));
+        //isPlayingTrack1 = !isPlayingTrack1;
+    }
+
+
+    private IEnumerator FadeTrack(AudioClip newClip)
+    {
+        float timeToFade = 01.25f;
+        float timeElapsed = 0, pct;
+
+        if (isPlayingTrack1) //If default Ambience it playing...
+        {
+            track2.clip = newClip;
+            track2.Play();
+            while (timeElapsed < timeToFade)
+            {
+                pct = timeElapsed / timeToFade;
+                track2.volume = Mathf.Lerp(0, 1, pct);
+                track1.volume = Mathf.Lerp(1, 0, pct);
+                timeElapsed += Time.deltaTime;
+                yield return null;
+            }
+            track1.Stop();
+        }
+    }
+
 }
     
