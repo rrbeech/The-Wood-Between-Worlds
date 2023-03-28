@@ -22,6 +22,14 @@ public class Lift : MonoBehaviour
 
     public bool ringTouched;
 
+    private RingCollisionDetect greenRingCollisionDetect;
+
+    private void Start()
+    {
+        // Get the RingCollisionDetect component from the greenRing GameObject
+        greenRingCollisionDetect = greenRing.GetComponent<RingCollisionDetect>();
+    }
+
     private void Awake()
     {
         woodExit = GameObject.Find("Stargate").GetComponent<Animator>(); //Animation for the Stargate
@@ -31,13 +39,14 @@ public class Lift : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) //If player moves onto the platform while touching green ring
     {
-          ringTouched = greenRing.GetComponent<RingCollisionDetect>().ringTouched;
+        //ringTouched = greenRing.GetComponent<RingCollisionDetect>().ringTouched;
+        ringTouched = greenRingCollisionDetect.ringTouched;
 
         if (other.CompareTag("Player")) //If colliding with Player (hands)         
         {
             onThePlatform = true; //set flag 
-            if (ringTouched) //exit the woods if touching the green ring
-                ExitTheWoods();            
+            //if (ringTouched) //exit the woods if touching the green ring
+               // ExitTheWoods();            
         }
     }
 
@@ -60,14 +69,19 @@ public class Lift : MonoBehaviour
 
         coroutine = SceneLoader(); //Wait TIME_LIMIT seconds then switch scenes
         StartCoroutine(coroutine);
+        RenderSettings.fog = false; //turn off the fog so the ground underside will be black
     }
     
     private void Update() // if already on the platform THEN player touches green ring...
     {
-        ringTouched = greenRing.GetComponent<RingCollisionDetect>().ringTouched;
+        //ringTouched = greenRing.GetComponent<RingCollisionDetect>().ringTouched;
+        ringTouched = greenRingCollisionDetect.ringTouched;
 
         if (ringTouched && onThePlatform)
+        {
+            this.enabled = false;  //Turn off the Update Function.  We are leaving the scene
             ExitTheWoods();
+        }
     }
    
 }

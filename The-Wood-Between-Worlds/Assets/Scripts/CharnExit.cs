@@ -21,7 +21,13 @@ public class CharnExit : MonoBehaviour
 
     public bool ringTouched;
 
+    private RingCollisionDetect yellowRingCollisionDetect;
 
+    private void Start()
+    {
+        // Get the RingCollisionDetect component from the greenRing GameObject
+        yellowRingCollisionDetect = yellowRing.GetComponent<RingCollisionDetect>();
+    }
     private void Awake()
     {
         charnExit = GetComponent<Animator>(); //Animation for the Stargate
@@ -36,7 +42,8 @@ public class CharnExit : MonoBehaviour
     {
         if (!ExitInitiated) // If we are not already in the process of exiting, check the yellow ring
         {
-            ringTouched = yellowRing.GetComponent<RingCollisionDetect>().ringTouched;
+            //ringTouched = yellowRing.GetComponent<RingCollisionDetect>().ringTouched;
+            ringTouched =yellowRingCollisionDetect.ringTouched;
 
             if (ringTouched)
             {
