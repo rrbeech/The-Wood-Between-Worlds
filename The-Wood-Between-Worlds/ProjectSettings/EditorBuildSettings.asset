@@ -11,12 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Wood Between Worlds.unity
     guid: ac2363ef0f8ca604aaac73d7e28bbd32
-  - enabled: 0
-    path: Assets/Scenes/Transition Scene.unity
-    guid: 5760eff7e0e4d7d4b846e56d08af8abb
   - enabled: 1
     path: Assets/Scenes/Charn.unity
     guid: 922b47d6cb00f4942b1c0ce75c7d6565
+  - enabled: 1
+    path: Assets/Scenes/Transition Scene.unity
+    guid: 5760eff7e0e4d7d4b846e56d08af8abb
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
