@@ -2572,6 +2572,70 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &409186075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 409186078}
+  - component: {fileID: 409186077}
+  - component: {fileID: 409186076}
+  m_Layer: 0
+  m_Name: Book1Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &409186076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409186075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1417c8393a24c339076d4a7261e2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookCanvas: {fileID: 424212906}
+--- !u!135 &409186077
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409186075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4000
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!224 &409186078
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409186075}
+  m_LocalRotation: {x: -0.019003922, y: -0.6914653, z: -0.03816508, w: 0.72115046}
+  m_LocalPosition: {x: 0, y: 0, z: 3.197}
+  m_LocalScale: {x: 0.0002, y: 0.0002, z: 0.0002}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: -4.599, y: -87.526, z: -1.654}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -6.163, y: 0.872}
+  m_SizeDelta: {x: 3500, y: 4000}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &416174401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2976,13 +3040,15 @@ GameObject:
   - component: {fileID: 424212908}
   - component: {fileID: 424212907}
   - component: {fileID: 424212912}
+  - component: {fileID: 424212913}
+  - component: {fileID: 424212914}
   m_Layer: 5
   m_Name: BookCanvas1
-  m_TagString: Untagged
+  m_TagString: Book1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &424212907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3083,7 +3149,7 @@ RectTransform:
   - {fileID: 1898864758}
   - {fileID: 1124262582}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: -4.599, y: -87.526, z: -1.654}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3103,6 +3169,35 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 4000
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &424212913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424212906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1417c8393a24c339076d4a7261e2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookCanvas: {fileID: 0}
+--- !u!54 &424212914
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424212906}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &444264002
 GameObject:
   m_ObjectHideFlags: 0
@@ -6737,7 +6832,7 @@ Transform:
   m_Children:
   - {fileID: 2076328165}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1066477745
 Animator:
@@ -11544,6 +11639,7 @@ GameObject:
   - component: {fileID: 1951903763}
   - component: {fileID: 1951903766}
   - component: {fileID: 1951903767}
+  - component: {fileID: 1951903768}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Player
@@ -11628,6 +11724,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c987089389f8344886f68da70970af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &1951903768
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951903762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1977694638
 GameObject:
   m_ObjectHideFlags: 0
