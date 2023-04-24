@@ -12893,7 +12893,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Disclaimer Text Here
+  m_text: 'Disclaimer
+
+    This project is a fan-made tribute to a work of literature
+    by C.S. Lewis, "The Magician''s Nephew" and is intended for non-commercial entertainment.
+    None of the authors of this application hold a license to produce or distribute
+    material generated from the original work and there are no plans to monetize
+    any part of the experience.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
