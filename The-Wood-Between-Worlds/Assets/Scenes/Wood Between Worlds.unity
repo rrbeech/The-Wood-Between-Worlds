@@ -986,7 +986,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4221f60d54178ae40ac2d3a59739866f,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4221f60d54178ae40ac2d3a59739866f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4221f60d54178ae40ac2d3a59739866f,
         type: 3}
@@ -2976,7 +2981,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4221f60d54178ae40ac2d3a59739866f,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4221f60d54178ae40ac2d3a59739866f,
         type: 3}
@@ -5558,7 +5563,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 696962811}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Rings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6619,6 +6624,19 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!65 &718257392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718257384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.440116, y: 17.994394, z: 22.549934}
+  m_Center: {x: -0.010323491, y: 8.497198, z: 5.328343}
 --- !u!1 &724646431
 GameObject:
   m_ObjectHideFlags: 0
@@ -15676,7 +15694,7 @@ GameObject:
   - component: {fileID: 1839257409}
   - component: {fileID: 1839257408}
   - component: {fileID: 1839257407}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
