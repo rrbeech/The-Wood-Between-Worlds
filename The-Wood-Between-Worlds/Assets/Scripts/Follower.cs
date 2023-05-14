@@ -15,8 +15,6 @@ public class Follower : MonoBehaviour
     {
         distanceTravelled += speed * Time.deltaTime;
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
-
-        // this line of code not needed as it will change the rotation of the rodent
-        //transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled); 
+        transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled); 
     }
 }
