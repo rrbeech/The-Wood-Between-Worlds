@@ -6309,6 +6309,23 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2223639932434330405, guid: 571384f01f4cfe64bb7fb6c99e2b5de6,
+        type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223639932434330405, guid: 571384f01f4cfe64bb7fb6c99e2b5de6,
+        type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 1827226128182048838, guid: 571384f01f4cfe64bb7fb6c99e2b5de6,
+        type: 3}
+    - target: {fileID: 2223639932434330405, guid: 571384f01f4cfe64bb7fb6c99e2b5de6,
+        type: 3}
+      propertyPath: m_Animations.Array.data[1]
+      value: 
+      objectReference: {fileID: 1827226128182048838, guid: 571384f01f4cfe64bb7fb6c99e2b5de6,
+        type: 3}
     - target: {fileID: 2748347408565003083, guid: 571384f01f4cfe64bb7fb6c99e2b5de6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

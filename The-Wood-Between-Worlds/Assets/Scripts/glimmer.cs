@@ -17,7 +17,7 @@ public class glimmer : MonoBehaviour
 
     private void onTriggerExit(Collider other)
     {
-        if (other.tag == "Rabbit")
+        if (other.tag != "Rabbit")
         {
             particles.Stop();
         }
